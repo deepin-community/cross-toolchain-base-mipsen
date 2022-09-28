@@ -1,0 +1,486 @@
+cross-toolchain-base-mipsen (18) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base (58).
+  * Build using glibc 2.32-1.
+  * Build without libaudit.
+
+ -- YunQiang Su <syq@debian.org>  Tue, 07 Sep 2021 10:26:32 +0800
+
+cross-toolchain-base-mipsen (17) unstable; urgency=medium
+
+  * dpkg-cross: fix support for ld-linux-mipsn8.so.1 for r6.
+  * Merge some other changes from c-t-b.
+
+ -- YunQiang Su <syq@debian.org>  Thu, 26 Aug 2021 16:50:34 +0800
+
+cross-toolchain-base-mipsen (16) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base (55).
+  * Build with current glibc (2.31-17)
+    Binutils (2.37-4)
+    GCC (10.2.1-6)
+
+ -- YunQiang Su <syq@debian.org>  Thu, 24 Aug 2021 20:14:19 +0800
+
+cross-toolchain-base-mipsen (15) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base (53).
+  * Build with current glibc (2.31-11).
+
+ -- YunQiang Su <syq@debian.org>  Sun, 25 Apr 2021 14:20:32 +0800
+
+cross-toolchain-base-mipsen (14) unstable; urgency=medium
+
+  * Remove Conflicts section from libc-cross packages
+  * No need to remove lib/ld.so.1 from
+    libc6-mips32-mips64-cross libc6-mips32-mips64el-cross
+    dpkg-cross can process the ld.so.1 for lib64.
+
+ -- YunQiang Su <syq@debian.org>  Sun, 28 Feb 2021 22:35:07 +0800
+
+cross-toolchain-base-mipsen (13) unstable; urgency=medium
+
+  * Rebase c-t-b 52
+    - Build using linux 5.10.13.
+    - Build using binutils 2.35.2-2.
+    - Build using gcc 10.2.1-6.
+    - Build using glibc 2.31-9.
+    - Bump autoconf dependencies from 2.64 to 2.69.
+    - Fix conversion of arch qualified relations (Helmut Grohne).
+    - Add build dependency and autopkg test dependency on debugedit.
+    - 
+
+ -- YunQiang Su <syq@debian.org>  Mon, 22 Feb 2021 09:39:07 +0800
+
+cross-toolchain-base-mipsen (12) unstable; urgency=medium
+
+  * Rebase c-t-b 48
+    - Fix binutils build conflicts
+    - Build using glibc 2.31-5.
+    - Build using gcc 10.2.1-1.
+    - Build using linux 5.9.
+    - Build using binutils 2.35.1-4.
+    - Bump standards version.
+
+ -- YunQiang Su <syq@debian.org>  Mon, 28 Dec 2020 11:05:09 +0800
+
+cross-toolchain-base-mipsen (11) unstable; urgency=medium
+
+  * Rebase c-t-b 47
+    - build with gcc 10
+    - build with glibc 3.31
+    - build with binutils 2.35
+
+ -- YunQiang Su <syq@debian.org>  Mon, 03 Aug 2020 23:25:53 +0800
+
+cross-toolchain-base-mipsen (10) unstable; urgency=medium
+
+  * Don't generate Build-Using linux with binNMU version tail. (Closes: #942565)
+  * Build with glibc 2.30+ and binutils 2.34+.
+
+ -- YunQiang Su <syq@debian.org>  Sun, 22 Mar 2020 19:44:30 +0800
+
+cross-toolchain-base-mipsen (9) unstable; urgency=medium
+
+  * Based on cross-toolchain-base 43:
+    - Build using binutils 2.33.50.
+    - Build using linux 5.4.
+    - Bump standards version.
+
+ -- YunQiang Su <syq@debian.org>  Thu, 09 Jan 2020 16:18:11 +0800
+
+cross-toolchain-base-mipsen (8) unstable; urgency=medium
+
+  * Remove merged patch for binutils. (Closes: #934716)
+  * Remove autopkgtests. (Closes: #941057)
+
+ -- YunQiang Su <syq@debian.org>  Wed, 16 Oct 2019 23:09:43 +0800
+
+cross-toolchain-base-mipsen (7) unstable; urgency=medium
+
+  * Based on cross-toolchain-base 42.
+  * Build use gcc-9, glibc 2.29. 
+
+ -- YunQiang Su <syq@debian.org>  Mon, 16 Sep 2019 22:10:17 +0800
+
+cross-toolchain-base-mipsen (6) unstable; urgency=medium
+
+  * Based on cross-toolchain-base 40~
+  * Add mips, mipsel, mips64el to this packages since 
+    they will be removed for cross-toolchain-base.
+
+ -- YunQiang Su <syq@debian.org>  Sun, 08 Sep 2019 09:21:49 +0800
+
+cross-toolchain-base-mipsen (5) unstable; urgency=medium
+
+  * Fix building with binutils snapshot builds. (Closes: #932320)
+
+ -- YunQiang Su <syq@debian.org>  Wed, 31 Jul 2019 06:48:59 +0000
+
+cross-toolchain-base-mipsen (4) unstable; urgency=medium
+
+  * Build using glibc 2.28-10.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 02 May 2019 14:51:40 +0200
+
+cross-toolchain-base-mipsen (3) unstable; urgency=medium
+
+  * Build using gcc 8.3.0-7.
+  * Build using binutils 2.31.1-16.
+  * Build using glibc 2.28-9.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 29 Apr 2019 21:25:28 +0200
+
+cross-toolchain-base-mipsen (2+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove myself from uploaders.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 12 Mar 2019 04:09:32 +0000
+
+cross-toolchain-base-mipsen (2) unstable; urgency=medium
+
+  * Fix autopkgtest: use avaiable mips arch for test. 
+
+ -- YunQiang Su <syq@debian.org>  Mon, 11 Feb 2019 17:19:36 +0800
+
+cross-toolchain-base-mipsen (1) unstable; urgency=medium
+
+  * Init release based on cross-toolchain-base 32
+
+ -- YunQiang Su <syq@debian.org>  Sat, 02 Feb 2019 09:02:07 +0800
+
+cross-toolchain-base (32) unstable; urgency=medium
+
+  * Build using glibc 2.28-4.
+  * Build using gcc 8.2.0-14.
+  * Build using linux 4.19.
+  * Build using binutils 2.31.1-11.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 09 Jan 2019 10:37:28 +0100
+
+cross-toolchain-base (30) unstable; urgency=medium
+
+  * Build using glibc 2.28-2.
+  * Build using gcc 8.2.0-11.
+  * Tighten dependencies for the autopkg test.
+  * Fix VCS attribute.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 08 Dec 2018 12:05:53 +0100
+
+cross-toolchain-base (29) unstable; urgency=medium
+
+  * Build using glibc 2.28.
+  * Build using gcc 8.2.0-10.
+  * Update VCS attributes in the control file.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 29 Nov 2018 12:16:19 +0100
+
+cross-toolchain-base (28) unstable; urgency=medium
+
+  * Build using linux 4.18.
+  * Build using gcc 7.3.0-27.
+  * Build using binutils 2.31.1.
+  * Simplify the kernel headers build.
+  * Add an autopkg test to build a subset of cross compilers.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 17 Sep 2018 18:02:42 +0200
+
+cross-toolchain-base (27) unstable; urgency=medium
+
+  * Build using gcc 7.3.0-20.
+  * Build using binutils 2.30-21.
+  * Fix upgrade of the ARM32 multilib packages.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 30 May 2018 19:39:54 +0200
+
+cross-toolchain-base (26) unstable; urgency=medium
+
+  * Build using linux 4.16.
+  * Fix ARM32 multilib installations.
+  * Fix binutils installation in the build chroot.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 10 May 2018 20:43:12 +0200
+
+cross-toolchain-base (25) unstable; urgency=medium
+
+  * Add support for riscv64 (Aurelian Jarno). Addresses: #892790.
+  * Build using gcc 7.3.0-14.
+  * Build using binutils 2.30-11.
+  * Fix dpkg-cross ldscript conversion for x32.
+  * Add support to build packages for amd64, i386 and x32.
+  * Build packages for amd64 and i386.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 02 Apr 2018 04:53:03 +0200
+
+cross-toolchain-base (24) unstable; urgency=medium
+
+  * Build using glibc 2.27. Closes: #886315.
+  * Build using gcc 7.3.0-11.
+  * Build using binutils 2.30-7.
+  * Build using linux 4.15.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 12 Mar 2018 14:46:33 +0100
+
+cross-toolchain-base (22) unstable; urgency=medium
+
+  * Build using glibc 2.26-2. Addresses: #886315.
+  * Build using gcc 7.2.0-19.
+  * Build using binutils 2.29.1-13.
+  * Add support for ia64. Addresses: #886175.
+  * dpkg-cross: Add fixes for mipsr6 and n32 (YunQiang Su). Addresses: #886312.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 07 Jan 2018 23:46:19 +0100
+
+cross-toolchain-base (21) unstable; urgency=medium
+
+  * Build using gcc 6.4.0-11.
+  * Build using glibc 2.25-3.
+  * Build using linux 4.14.2-1.
+  * Build using binutils 2.29.1-10.
+  * Update dpkg-cross for mips* targets. Closes: #883189.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 07 Dec 2017 07:59:56 +0100
+
+cross-toolchain-base (20) unstable; urgency=medium
+
+  * Build using gcc 6.4.0-10.
+  * Build using glibc 2.25-1. Closes: #882168.
+  * Build using linux 4.13.13-1.
+  * Update build dependencies. Closes: #881618.
+  * Add support for a plethora of mips r6 targets (YunQiang Su).
+  * Update dpkg-cross. Addresses #881687.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 19 Nov 2017 23:02:17 +0100
+
+cross-toolchain-base (19) unstable; urgency=medium
+
+  * Build using binutils 2.29.1-1, using the standard debian targets.
+  * Build using gcc 6.4.0-7.
+  * Build using linux 4.12.13-1.
+  * Build using glibc 2.24-17.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 20 Sep 2017 16:26:16 +0200
+
+cross-toolchain-base (18) unstable; urgency=medium
+
+  * Fix build for i386 hosts. Closes: #860687.
+  * Build using binutils 2.28-5.
+  * Build using linux 4.9.25.
+  * Build using gcc 6.3.0-18.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 15 May 2017 21:01:45 -0700
+
+cross-toolchain-base (17) unstable; urgency=medium
+
+  * Build using linux 4.9.13.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 01 Mar 2017 18:07:10 +0100
+
+cross-toolchain-base (16) unstable; urgency=medium
+
+  * Build using linux 4.9.10.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 23 Feb 2017 16:35:10 +0100
+
+cross-toolchain-base (15) unstable; urgency=medium
+
+  * Build using gcc 6.3.
+  * Build using binutils 2.27.90.
+  * Build using linux 4.9.
+  * Inject the libc-dev dependency on linux-libc-dev.
+  * Mark all packages as Multi-Arch: foreign.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 19 Jan 2017 11:27:27 +0100
+
+cross-toolchain-base (14) unstable; urgency=medium
+
+  * Fix glibc build failure. Closes: #844866.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 20 Nov 2016 13:18:43 +0100
+
+cross-toolchain-base (13) unstable; urgency=medium
+
+  * Build using linux 4.8.
+  * Build using binutils 2.27.51.
+  * Stop building powerpc binary packages from this source.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 04 Nov 2016 12:48:23 +0100
+
+cross-toolchain-base (12) unstable; urgency=medium
+
+  * Build using linux 4.7.
+  * Build using binutils 2.27.
+  * Build using gcc 6.2. Closes: #835944.
+  * Build using glibc 2.24.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 01 Sep 2016 21:27:44 +0200
+
+cross-toolchain-base (11) unstable; urgency=medium
+
+  * Build using linux 4.6.
+  * Build using binutils 2.26.1.
+  * Build using gcc 5.4.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 04 Jul 2016 11:29:56 +0200
+
+cross-toolchain-base (10) experimental; urgency=medium
+
+  * Fix builds with binutils 2.26.
+  * Fix builds with glibc 2.23. Closes: #820678.
+  * Build using GCC 5.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 14 Apr 2016 22:23:22 +0200
+
+cross-toolchain-base (9) unstable; urgency=medium
+
+  * Fix release version generation for the -ports source package.
+  * Let glibc's shlibs file generate dependencies on the target architecture.
+  * Parallelize the dpkg-cross and re-packaging steps.
+  * Update kernel tools build dependencies. Closes: #811188.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 21 Jan 2016 17:01:42 +0100
+
+cross-toolchain-base (8) unstable; urgency=medium
+
+  * Fix builds with binutils 2.25.51.x.
+  * Fix builds with glibc 2.21.
+  * Update to enable builds on alpha, hppa, m68k, ppc64, sh4, sparc and
+    sparc64.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 02 Dec 2015 18:44:46 +0100
+
+cross-toolchain-base (7) unstable; urgency=medium
+
+  * Update glibc patches. Closes: #802062.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 29 Oct 2015 18:14:21 +0100
+
+cross-toolchain-base (6) unstable; urgency=medium
+
+  * Build packages for s390x.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 04 Sep 2015 14:16:44 +0200
+
+cross-toolchain-base (5) unstable; urgency=medium
+
+  * Add build conflicts on libc6-amd64, libc6-i386, libc6-x32.
+  * Call gzip with -n for reproducible builds.
+  * Build using GCC 4.9.3.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 02 Jul 2015 12:11:55 +0200
+
+cross-toolchain-base (4) unstable; urgency=medium
+
+  [ Matthias Klose ]
+  * Allow one to to build -dbg packages.
+
+  [ YunQiang Su ]
+  * Add support to build packages for mips, mipsel, mips64, mips64el.
+    Building packages for mips64, mips64el disabled by default.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 31 May 2015 13:34:25 +0200
+
+cross-toolchain-base (3) unstable; urgency=medium
+
+  [ Dimitri Ledkov ]
+  * Bootstrap linux for multiple architectures.
+
+  [ Matthias Klose ]
+  * Bootstrap glibc/gcc for multiple architectures.
+  * Add Built-Using attributes.
+  * Rename changelog in the kernel header packages and install the
+    cross-toolchain-base changelog.
+  * Initial upload. Closes: #784077.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 13 May 2015 10:38:50 +0200
+
+powerpc-cross-toolchain-base (1.2) utopic; urgency=medium
+
+  [ Matthias Klose ]
+  * Build using the glibc source package.
+  * Update the multilib build for glibc.
+
+  [ Adam Conrad ]
+  * Sync with arm64 packaging.
+  * install-stubs.patch: Install glibc stub headers for the stage1 build.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 23 Oct 2014 16:06:25 +0200
+
+powerpc-cross-toolchain-base (1.1) trusty; urgency=medium
+
+  * Bump eglibc to 2.19.
+  * Refresh eglibc patches.
+  * Add rsync, xmlto build-dep.
+  * Build-depend on libcloog-isl-dev instead of libcloog-ppl-dev.
+  * Regenerate debian/control.
+
+ -- Matthias Klose <doko@ubuntu.com>  Wed, 26 Feb 2014 08:08:24 +0100
+
+powerpc-cross-toolchain-base (1.0) trusty; urgency=low
+
+  * Bump eglibc to 2.18.
+  * Bump gcc to 4.8.
+  * Explicitly use /dev/null as quilt config file.
+  * Drop not-needed any more binutils-version.diff gcc overlay patch
+  * Remove binutils-gold build-conflict, and regenerate control.
+  * Refresh eglibc/ubuntu/disable-selinux.patch.
+  * Add symlinks and rdfind build-dependency.
+  * Speed up build, by building eglibc in parallel.
+  * Remove Marcin Juszkiewicz from maintainers, thanks a lot for your
+    awesome work and good luck on the Red side ;-)
+  * Bump linux-source to 3.12.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 20 Dec 2013 01:12:44 +0000
+
+powerpc-cross-toolchain-base (0.9) raring; urgency=low
+
+  * Drop gcc-4.7/no-shlibdeps-for-stages.diff, not needed with new glibc.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Fri, 08 Feb 2013 14:15:01 -0700
+
+powerpc-cross-toolchain-base (0.8) raring; urgency=low
+
+  * Bump eglibc to 2.17.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 08 Feb 2013 20:41:54 +0000
+
+powerpc-cross-toolchain-base (0.7) raring; urgency=low
+
+  * Don't call dh_shlibdeps for the libgcc packages; the packages are
+    just unpacked for the following glibc build, the dependency information
+    is not needed. The build fails otherwise on i386 (succeeds on amd64).
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 12 Jan 2013 20:24:27 +0100
+
+powerpc-cross-toolchain-base (0.6) raring; urgency=low
+
+  * Remove LD_LIBRARY_PATH settings for gcc builds.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 12 Jan 2013 03:41:26 +0100
+
+powerpc-cross-toolchain-base (0.5) raring; urgency=low
+
+  * Set WITH_SYSROOT for GCC builds.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 12 Jan 2013 02:18:49 +0100
+
+powerpc-cross-toolchain-base (0.4) raring; urgency=low
+
+  * Bump b-d on linux source to 3.8.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 11 Jan 2013 22:02:08 +0100
+
+powerpc-cross-toolchain-base (0.2) raring; urgency=low
+
+  * Merge packaging with armhf-cross-toolchain-base 1.94.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 11 Jan 2013 14:59:10 +0100
+
+powerpc-cross-toolchain-base (0.1) raring; urgency=low
+
+  * Initial package, based on armhf-cross-toolchain-base 1.93.
+  * Don't try to build libc6-prof packages.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 14 Dec 2012 10:11:41 +0100

@@ -1,0 +1,1038 @@
+Source: cross-toolchain-base-mipsen
+Section: devel
+Priority: optional
+Maintainer: Cross Toolchain Base Team <cross-toolchain-base-devs@lists.launchpad.net>
+Uploaders: Matthias Klose <doko@debian.org>, Dimitri John Ledkov <xnox@debian.org>, YunQiang Su <syq@debian.org>
+Vcs-Browser: https://salsa.debian.org/toolchain-team/cross-toolchain-base
+Vcs-Git: https://salsa.debian.org/toolchain-team/cross-toolchain-base.git
+Standards-Version: 4.5.1
+Build-Depends: binutils-multiarch,
+  dpkg (>= 1.16.0~ubuntu6), rdfind, symlinks, lsb-release,
+  binutils-source (>= 2.37-4~),
+  glibc-source (>= 2.32-1~),
+  gcc-10-source (>= 10.3.0-7~),
+  linux-source (>= 5.10.13), linux-libc-dev (>= 5.10.13),
+  autoconf (>= 2.69), autoconf2.69, autogen,
+  automake, bison (>= 1:2.3), chrpath, debhelper (>= 9),
+  dpkg-dev (>= 1.15.3.1), fakeroot, file, flex,
+  dwz, debugedit (>= 4.16), gawk, gettext, gperf (>= 3.0.1), kernel-wedge (>= 2.24),
+  libisl-dev, libmpc-dev, libelf-dev,
+  libmpfr-dev (>= 2.3.0), rsync, xmlto, libtool, lsb-release, lzma, m4,
+  make (>= 3.81), kmod | module-init-tools, symlinks,
+  patchutils, procps, quilt, rdfind, coreutils (>= 2.26) | realpath (>= 1.9.12),
+  sed (>= 4.0.5-4), sharutils, tar (>= 1.22), xz-utils,
+  asciidoc, texinfo, cpio, python3, bc, time,
+  libconfig-auto-perl, libfile-temp-perl, libconfig-auto-perl,
+  libfile-homedir-perl, liblocale-gettext-perl, libunwind-dev [amd64 i386 x32]
+Build-Conflicts: dpkg-cross, libdebian-dpkgcross-perl,
+  binutils-mips-linux-gnu [!mips], binutils-mipsel-linux-gnu [!mipsel], binutils-mips64el-linux-gnuabi64 [!mips64el], binutils-mips64-linux-gnuabi64 [!mips64], binutils-mips64-linux-gnuabin32 [!mipsn32], binutils-mips64el-linux-gnuabin32 [!mipsn32el], binutils-mipsisa32r6-linux-gnu [!mipsr6], binutils-mipsisa32r6el-linux-gnu [!mipsr6el], binutils-mipsisa64r6-linux-gnuabin32 [!mipsn32r6], binutils-mipsisa64r6el-linux-gnuabin32 [!mipsn32r6el], binutils-mipsisa64r6-linux-gnuabi64 [!mips64r6], binutils-mipsisa64r6el-linux-gnuabi64 [!mips64r6el],
+  libc6-mips-cross, linux-libc-dev-mips-cross, libc6-mipsel-cross, linux-libc-dev-mipsel-cross, libc6-mips64el-cross, linux-libc-dev-mips64el-cross, libc6-mips64-cross, linux-libc-dev-mips64-cross, libc6-mipsn32-cross, linux-libc-dev-mipsn32-cross, libc6-mipsn32el-cross, linux-libc-dev-mipsn32el-cross, libc6-mipsr6-cross, linux-libc-dev-mipsr6-cross, libc6-mipsr6el-cross, linux-libc-dev-mipsr6el-cross, libc6-mipsn32r6-cross, linux-libc-dev-mipsn32r6-cross, libc6-mipsn32r6el-cross, linux-libc-dev-mipsn32r6el-cross, libc6-mips64r6-cross, linux-libc-dev-mips64r6-cross, libc6-mips64r6el-cross, linux-libc-dev-mips64r6el-cross,
+  libc6-amd64 [i386 x32], libc6-i386 [amd64 x32], libc6-x32 [amd64 i386]
+
+Package: linux-libc-dev-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mips-cross, linux-libc-dev-mips-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mips64-cross, linux-libc-dev-mips64-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mips64el-cross, linux-libc-dev-mips64el-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mips64r6-cross, linux-libc-dev-mips64r6-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mips64r6el-cross, linux-libc-dev-mips64r6el-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsel-cross, linux-libc-dev-mipsel-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsn32-cross, linux-libc-dev-mipsn32-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsn32el-cross, linux-libc-dev-mipsn32el-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsn32r6-cross, linux-libc-dev-mipsn32r6-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsn32r6el-cross, linux-libc-dev-mipsn32r6el-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsr6-cross, linux-libc-dev-mipsr6-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: linux-libc-dev-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: linux-kernel-headers-mipsr6el-cross, linux-libc-dev-mipsr6el-dcv1
+Built-Using: ${bu:linux}
+Description: Linux Kernel Headers for development (for cross-compiling)
+ This package provides headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system
+ libraries. They are NOT meant to be used to build third-party modules for
+ your kernel. Use linux-headers-* packages for that.
+
+Package: libc6-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mips-cross (<< 2.20.1-1), binutils-gold-mips-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mips64-cross (<< 2.20.1-1), binutils-gold-mips64-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mips64el-cross (<< 2.20.1-1), binutils-gold-mips64el-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mips64r6-cross (<< 2.20.1-1), binutils-gold-mips64r6-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mips64r6el-cross (<< 2.20.1-1), binutils-gold-mips64r6el-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsel-cross (<< 2.20.1-1), binutils-gold-mipsel-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsn32-cross (<< 2.20.1-1), binutils-gold-mipsn32-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsn32el-cross (<< 2.20.1-1), binutils-gold-mipsn32el-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsn32r6-cross (<< 2.20.1-1), binutils-gold-mipsn32r6-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsn32r6el-cross (<< 2.20.1-1), binutils-gold-mipsn32r6el-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsr6-cross (<< 2.20.1-1), binutils-gold-mipsr6-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Conflicts: binutils-mipsr6el-cross (<< 2.20.1-1), binutils-gold-mipsr6el-cross (<< 2.20.1-11)
+Built-Using: ${bu:glibc}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mips-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mipsel-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mipsn32-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mipsn32el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mips64-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mips64el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mipsr6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mipsr6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mipsn32r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips64-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips64-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mipsn32r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mips64r6-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mips32-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mips32-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+
+Package: libc6-mipsn32-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libs
+Depends: ${misc:Depends}
+Description: GNU C Library: Shared libraries (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+
+Package: libc6-dev-mipsn32-mips64r6el-cross
+Architecture: all
+Multi-Arch: foreign
+Section: libdevel
+Depends: ${misc:Depends}
+Description: GNU C Library: Development Libraries and Header Files (for cross-compiling)
+ This package was generated by dpkg-cross for cross compiling.
+ .
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
