@@ -1,10 +1,12 @@
 KERNEL_ARCH_alpha:=alpha
+KERNEL_ARCH_arc:=arc
 KERNEL_ARCH_arm64:=arm64
 KERNEL_ARCH_armhf:=arm
 KERNEL_ARCH_armel:=arm
 KERNEL_ARCH_m68k:=m68k
 KERNEL_ARCH_hppa:=parisc
 KERNEL_ARCH_ia64:=ia64
+KERNEL_ARCH_loong64:=loongarch
 KERNEL_ARCH_mips:=mips
 KERNEL_ARCH_mipsel:=mips
 KERNEL_ARCH_mipsn32:=mips
@@ -30,7 +32,5 @@ KERNEL_ARCH_i386:=x86
 KERNEL_ARCH_amd64:=x86
 KERNEL_ARCH_x32:=x86
 
-CROSS_BIARCH_armhf:=armel
-CROSS_BIARCH_armel:=armhf
 CROSS_BIARCH_powerpc:=ppc64
 CROSS_BIARCH_s390x:=s390
