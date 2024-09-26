@@ -1,3 +1,119 @@
+cross-toolchain-base-mipsen (30+deepin1) unstable; urgency=medium
+
+  * Adapt for deepin versioning (GCC 12.3, Binutils 2.41, Linux 6.6).
+
+ -- Mingcong Bai <baimingcong@uniontech.com>  Tue, 24 Sep 2024 16:59:47 +0800
+
+cross-toolchain-base-mipsen (30) unstable; urgency=medium
+
+  * Fix dpkg-cross:
+    libc6-mips32 has no /usr/lib/ld.so.1 or /lib/ld.so.1 now.
+    It is a symbol link created by postinst script now.
+    Let's create /usr/<triple>/lib/ld.so.1 with dpkg-cross now.
+
+ -- YunQiang Su <syq@debian.org>  Thu, 08 Aug 2024 15:07:44 +0800
+
+cross-toolchain-base-mipsen (29) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base 79.
+    - Build using glibc 2.39-4.
+    - Build using linux 6.9.9.
+    - Build using gcc 13.3.0-3.
+    - Drop build dependency on autogen. See: #1076255.
+
+ -- YunQiang Su <syq@debian.org>  Wed, 31 Jul 2024 17:22:16 +0800
+
+cross-toolchain-base-mipsen (28) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base 69.
+    - Build using binutils 2.42-4
+    - Build using 2.38-11
+    - Build using linux 6.8.11-1
+    - Build using gcc-13 13.2.0-25
+
+ -- YunQiang Su <syq@debian.org>  Sun, 26 May 2024 23:40:24 +0800
+
+cross-toolchain-base-mipsen (27) unstable; urgency=medium
+
+  * Build using linux 6.6.11-1.
+  * Build using binutils 2.41.90.20240115-1.
+  * Build using gcc 12.3.0-13.
+  * Build using glibc 2.37-13. 
+
+ -- YunQiang Su <syq@debian.org>  Fri, 19 Jan 2024 19:51:10 +0800
+
+cross-toolchain-base-mipsen (26) unstable; urgency=medium
+
+  * d/rules: remove linux source, support 6.0+.
+    Closes: #1042033
+
+ -- YunQiang Su <syq@debian.org>  Tue, 15 Aug 2023 15:39:02 +0800
+
+cross-toolchain-base-mipsen (25) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base 68.
+    - Build using binutils 2.41-4.
+    - Build using linux 6.4.4.
+    - Fix some lintian warnings.
+    - Bump standards version.
+
+ -- YunQiang Su <syq@debian.org>  Tue, 15 Aug 2023 15:21:47 +0800
+
+cross-toolchain-base-mipsen (24) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base 66
+    - Build using glibc 2.36-8.
+    - Build using binutils 2.40-2.
+    - Build using linux 6.1.4.
+    - Build using gcc 12.2.0-14.
+  * Build-Dep on linux-source metapackage. (Closes: #1030568)
+
+ -- YunQiang Su <syq@debian.org>  Mon, 06 Feb 2023 14:45:10 +0800
+
+cross-toolchain-base-mipsen (23) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base 65
+    - Build using glibc 2.36-7.
+    - Build using linux 6.0.12.
+    - Add new build dependencies for binutils.
+    - Add build dependency on dpkg (>= 1.21.17).
+
+ -- YunQiang Su <syq@debian.org>  Mon, 09 Jan 2023 12:53:02 +0800
+
+cross-toolchain-base-mipsen (22) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base (62).
+    - build with glibc 2.36 and linux 6.0.
+
+ -- YunQiang Su <syq@debian.org>  Mon, 05 Dec 2022 15:15:59 +0800
+
+cross-toolchain-base-mipsen (21) unstable; urgency=medium
+
+  * dpkg-cross: process lib/ld.so for mips64 and sparc64.
+    (Closes: #1021774)
+
+ -- YunQiang Su <syq@debian.org>  Sun, 16 Oct 2022 01:48:34 +0800
+
+cross-toolchain-base-mipsen (20) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base (61).
+    - Build using glibc 2.35-3.
+    - Build using linux 5.19.11-1.
+    - Build using gcc 11.3.0-8.
+    - Build using binutils 2.39-7.
+
+ -- YunQiang Su <syq@debian.org>  Thu, 13 Oct 2022 09:27:06 +0800
+
+cross-toolchain-base-mipsen (19) unstable; urgency=medium
+
+  * Rebase cross-toolchain-base (59).
+    - Build using glibc 2.33-1.
+    - Build using linux 5.15.5.
+    - Build using gcc 10.3.0-7.
+    - Build using binutils 2.37-10.
+
+ -- YunQiang Su <syq@debian.org>  Mon, 13 Dec 2021 13:52:20 +0000
+
 cross-toolchain-base-mipsen (18) unstable; urgency=medium
 
   * Rebase cross-toolchain-base (58).
